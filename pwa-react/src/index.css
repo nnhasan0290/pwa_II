@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  background-color: transparent !important;
+}
+body::before{
+  content: "";
+  background-image: url("https://www.bing.com/th?id=OHR.GroundhogThree_ROW1163654952_1920x1080.jpg&rf=LaDigue_1920x1080.jpg");
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
