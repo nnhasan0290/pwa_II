@@ -14,6 +14,8 @@ this.addEventListener("fetch", (event) => {
         if (res) {
           return res;
         }
+        const req_url = event.request.clone();
+        fetch(req_url);
       })
     );
   }

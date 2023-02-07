@@ -4,9 +4,18 @@ function App() {
   const [post, setPosts] = React.useState([]);
   React.useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((res) => res.json())
-      .then((data) => setPosts(data));
-  });
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setPosts(data);
+        localStorage.setItem("users", JSON.stringify(data));
+      })
+      .catch((error) => {
+        alert("offline");
+        setPosts(JSON.parse(localStorage.getItem("users")));
+      });
+  },[]);
   return (
     <div className="App">
       <main>
@@ -18,7 +27,7 @@ function App() {
                 marginRight: "auto",
                 marginLeft: "auto",
                 border: "1px solid gray",
-                padding: "20px"
+                padding: "20px",
               }}
               key={each.id}
             >
